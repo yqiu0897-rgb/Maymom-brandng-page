@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maymom - Caring for Each Mom</title>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome -->
-  <link
-    href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <script>
     tailwind.config = {
@@ -28,6 +24,9 @@
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          spacing: {
+            '128': '32rem'
           }
         }
       }
@@ -36,15 +35,9 @@
 
   <style type="text/tailwindcss">
     @layer utilities {
-      .text-shadow {
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-      .transition-custom {
-        transition: all 0.3s ease-in-out;
-      }
-      .bg-blur {
-        backdrop-filter: blur(8px);
-      }
+      .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      .transition-custom { transition: all 0.3s ease-in-out; }
+      .bg-blur { backdrop-filter: blur(8px); }
     }
 
     body {
@@ -60,57 +53,182 @@
     }
 
     .section-title {
-      @apply text-3xl font-bold text-center mb-4;
+      @apply text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-center mb-4;
+    }
+
+    .section-subtitle {
+      @apply text-[clamp(1rem,2vw,1.25rem)] text-center text-gray-600 max-w-3xl mx-auto;
     }
   </style>
 </head>
 
 <body>
   <div class="min-h-screen flex flex-col">
-
-    <!-- Navbar -->
+    <!-- Header / Navbar -->
     <header class="fixed w-full top-0 z-50 bg-white/80 bg-blur shadow-sm">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-primary">Maymom</h1>
+        <a href="javascript:void(0);" class="text-2xl font-bold text-primary">Maymom</a>
         <nav class="hidden md:flex space-x-8">
-          <a href="#" class="font-medium hover:text-primary transition-custom">Products</a>
-          <a href="#" class="font-medium hover:text-primary transition-custom">About Us</a>
-          <a href="#" class="font-medium hover:text-primary transition-custom">Support</a>
-          <a href="#" class="font-medium hover:text-primary transition-custom">Contact</a>
+          <a href="javascript:void(0);" class="font-medium hover:text-primary transition-custom">Products</a>
+          <a href="javascript:void(0);" class="font-medium hover:text-primary transition-custom">About Us</a>
+          <a href="javascript:void(0);" class="font-medium hover:text-primary transition-custom">Support</a>
+          <a href="javascript:void(0);" class="font-medium hover:text-primary transition-custom">Contact</a>
         </nav>
+        <button class="md:hidden text-dark text-xl">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </header>
 
-    <!-- Hero -->
-    <main class="flex-grow pt-24">
-      <section class="h-[80vh] flex items-center justify-center bg-neutral text-center px-6">
-        <div>
-          <h2 class="text-4xl font-bold mb-6">Maymom cares for each MOM</h2>
-          <p class="text-lg mb-8 max-w-xl mx-auto">
-            Every breastfeeding journey is different. Maymom is here to care,
-            support, and walk with you.
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+      <!-- Hero Section -->
+      <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img src="https://design.gemcoder.com/staticResource/echoAiSystemImages/657ec60bf7219b05a349b621f4c12206.png" 
+               alt="Mother and baby bonding moment" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center text-white">
+          <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-bold mb-6 leading-tight text-shadow">
+            Maymom cares for each MOM
+          </h1>
+          <p class="text-[clamp(1.2rem,3vw,1.5rem)] mb-8 max-w-2xl mx-auto text-shadow">
+            Every breastfeeding journey is different. Maymom is here to care, support, and walk with you.
           </p>
-          <a href="#" class="btn-primary">Explore Products</a>
+          <a href="javascript:void(0);" class="btn-primary inline-block">Explore Products</a>
         </div>
       </section>
 
-      <!-- About Section -->
-      <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-          <h3 class="section-title">What we believe in</h3>
-          <p class="max-w-2xl mx-auto text-gray-600 mt-4">
-            We design products that support mothers with integrity, safety, and full support.
-          </p>
+      <!-- 情境區 -->
+      <section class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+              <img src="https://design.gemcoder.com/staticResource/echoAiSystemImages/3387ac63bfff7624134f637a93d68168.png" 
+                   alt="Happy mother with baby" class="w-full h-auto rounded-lg shadow-xl" />
+            </div>
+            <div class="md:w-1/2">
+              <p class="text-[clamp(1.2rem,3vw,1.5rem)] leading-relaxed">
+                When the breastfeeding journey begins, life can suddenly feel overwhelming.<br /><br />
+                Excitement and love often come with uncertainty and questions.<br /><br />
+                You are not alone.<br /><br />
+                Maymom is here to help.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- 三大問題區 -->
+      <section class="py-20">
+        <div class="container mx-auto px-4">
+          <h3 class="section-title">Common challenges mothers face</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-custom">
+              <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <i class="fas fa-puzzle-piece text-3xl text-primary"></i>
+              </div>
+              <p class="text-lg font-medium">Pump parts from different brands don't fit together.</p>
+            </div>
+            <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-custom">
+              <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <i class="fas fa-user-md text-3xl text-primary"></i>
+              </div>
+              <p class="text-lg font-medium">Flanges are uncomfortable or poorly sized.</p>
+            </div>
+            <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-custom">
+              <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <i class="fas fa-tint text-3xl text-primary"></i>
+              </div>
+              <p class="text-lg font-medium">Milk is wasted during transferring and storage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 其他區域可沿用原 HTML 結構 -->
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-12 text-center">
-      <p>© 2026 Maymom. All rights reserved.</p>
+    <footer class="bg-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <a href="javascript:void(0);" class="text-2xl font-bold text-white">Maymom</a>
+            <p class="mt-2 text-gray-400">Caring for each mom, every step of the way.</p>
+          </div>
+          <div class="flex space-x-8">
+            <a href="javascript:void(0);" class="text-gray-300 hover:text-white transition-custom">About Us</a>
+            <a href="javascript:void(0);" class="text-gray-300 hover:text-white transition-custom">Contact</a>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>© 2023 Maymom. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-
   </div>
+
+  <!-- Scripts -->
+  <script>
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('py-2', 'shadow-md');
+        header.classList.remove('py-4', 'shadow-sm');
+      } else {
+        header.classList.add('py-4', 'shadow-sm');
+        header.classList.remove('py-2', 'shadow-md');
+      }
+    });
+
+    var menuButton = document.querySelector('header button');
+    var nav = document.querySelector('header nav');
+    menuButton.addEventListener('click', function () {
+      nav.classList.toggle('hidden');
+      nav.classList.toggle('flex');
+      nav.classList.toggle('flex-col');
+      nav.classList.toggle('absolute');
+      nav.classList.toggle('top-16');
+      nav.classList.toggle('left-0');
+      nav.classList.toggle('w-full');
+      nav.classList.toggle('bg-white');
+      nav.classList.toggle('p-4');
+      nav.classList.toggle('shadow-lg');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        var targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        var targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var lazyImages = document.querySelectorAll("img");
+      if ("IntersectionObserver" in window) {
+        var imageObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var image = entry.target;
+              image.classList.add("opacity-100");
+              image.classList.remove("opacity-0");
+              imageObserver.unobserve(image);
+            }
+          });
+        });
+        lazyImages.forEach(function (image) {
+          imageObserver.observe(image);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
